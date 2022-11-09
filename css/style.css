@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+/*레이아웃 스타일*/
+html,body,#wrap,section{
+	width:100%;
+	height:100%;
+	transition:0.5s;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*section 배경색 지정*/
+#home{
+	background:url(../images/ICEPIPE_2020_9_PC-bg.png) no-repeat center center;	
+}
+#about{background:pink;}
+#skills{background:skyblue;}
+#work{background:yellow;}
+#contact{background:green;}
+
+/*header style*/
+header{
+	background:rgba(0,0,0,0.7);
+	position:fixed;
+	width:100%;
+	height:70px;
+	font-size:1.5em;
+	z-index:999;
+}
+
+/*topBtn style*/
+#topBtn{
+	width:50px;
+	height:50px;
+	background:white;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	border-radius:50%;
+	text-align:center;
+	line-height:50px;
+	box-shadow:0 0 2px 3px rgba(0,0,0,0.5);
+}
+
+/*layout style end----------------*/
+
+/*header style*/
+header a{color:white;}
+.logo{
+	position:absolute;
+	left:10%;
+	top:50%;
+	transform:translatey(-50%);
+}
+nav{
+	position:absolute;
+	right:10%;
+	top:50%;
+	transform:translatey(-50%);
+}
+nav ul{}
+nav ul li{
+	
+	float:left;
+	padding-left:50px;
+}
+nav ul li a{padding:5px;}
+nav a:hover, nav a.on{
+	border-bottom:2px solid red;
+	color:red !important;
+}
+
+/*모바일 삼선메뉴 상세스타일*/
+.mAllmenu{
+	width:30px;
+	height:30px;
+	position:absolute;
+	right:10%;
+	top:50%;
+	transform:translatey(-50%);
+	overflow:hidden;
+	z-index:10;
+	display:none;
+}
+.mAllmenu ul{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+.mAllmenu ul li{
+	width:100%;
+	height:4px;
+	background:white;
+	position:absolute;
+	transition:0.5s;
+}
+.mAllmenu ul li:nth-child(1){top:0;}
+.mAllmenu ul li:nth-child(2){top:50%; transform:translatey(-50%);}
+.mAllmenu ul li:nth-child(3){bottom:0;}
+
+/*삼선메뉴 클릭스 X버튼으로 전환*/
+.mAllmenu ul.mX{}
+.mAllmenu ul.mX li{
+	width:5px;
+	height:100%;
+	top:0;
+}
+
+
+.mAllmenu ul.mX li:nth-child(1){
+	left:0;
+	transform:skewX(40deg);
+	transform-origin:left top;
+}
+.mAllmenu ul.mX li:nth-child(2){
+	background:transparent;
+}
+.mAllmenu ul.mX li:nth-child(3){
+	left:25px;
+	transform:skewX(-40deg);
+	transform-origin:right top;
+}
+
+/*section 상세스타일(공통)*/
+section h2{
+	padding-top:90px;
+	text-align:center;
+	font-size:3.5em;
+}
+section h2 span{
+	color:white;
+	border-top:5px solid rgba(255,0,0,0.7);
+	font-size:1.3em;
+}
+section .content{
+	width:80%;
+	height:70%;
+	border:1px solid white;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+
+#home .content{margin-top:50px;}
+
+.content>div{
+	width:45%;
+	height:100%;
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	transition:0.5s;
+}
+
+#about .left{left:0;}
+#about .right{right:0;}
+
+#skills .left{left:0; transform:scale(1);}
+#skills .right{right:0; transform:scale(1);}
+
+#work .left{left:0; height:100%;}
+#work .right{right:0; height:100%;}
+
+#contact .left{left:0; width:45%;}
+#contact .right{right:0; width:45%;}
+
+/*문자열 세로 사룬데 정렬*/
+#work .left ul{
+	display:table;
+	width:100%;
+	height:100%;
+}
+
+#work .left ul li{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	font-size:3em;
+}
+
+
+@media screen and (max-width:1200px){
+	
+	body{font-size:11px;}
+	.content{width:95%;}	
+	
+	.mAllmenu{display:block;}
+	
+	/*삼선메뉴 클릭시 보이는 주메뉴들*/
+	nav{
+	position:fixed;
+	width:50%;
+	height:100%;
+	right:-50%;
+	top:0;
+	transform:translatey(0);
+	background:rgba(0,0,0,0.7);
+	}
+	nav ul{margin:100px;}
+	nav ul li{
+		clear:left;
+		line-height:4;
+	}
+	nav ul li a{}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
